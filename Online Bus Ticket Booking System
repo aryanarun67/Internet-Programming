@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SwiftBus - Online Bus Ticket Booking</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.65)
+),
+
+url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1800");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+}
+
+/* Navbar */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+}
+
+.logo{
+
+font-size:34px;
+font-weight:bold;
+
+color:#00BFFF;
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+}
+
+nav ul li:hover{
+
+color:#00BFFF;
+}
+
+.btn{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+45deg,
+#00BFFF,
+#87CEFA
+);
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+
+height:90vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+}
+
+.hero h1{
+
+font-size:75px;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#00BFFF,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:22px;
+
+max-width:800px;
+
+color:#dfefff;
+}
+
+/* Search Box */
+
+.search-box{
+
+margin-top:35px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+padding:25px;
+
+border-radius:20px;
+}
+
+.search-box input,
+.search-box select{
+
+padding:12px;
+
+margin:10px;
+
+border:none;
+
+border-radius:10px;
+
+width:180px;
+}
+
+/* Statistics */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+padding:50px;
+}
+
+.stat-card{
+
+width:220px;
+
+padding:25px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+}
+
+.stat-card h2{
+
+color:#00BFFF;
+}
+
+/* Section Title */
+
+.section-title{
+
+text-align:center;
+
+font-size:40px;
+
+color:#00BFFF;
+
+margin:50px 0;
+}
+
+/* Bus Cards */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px 40px 60px;
+}
+
+.card{
+
+width:300px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+overflow:hidden;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(0,191,255,.3);
+}
+
+.card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+}
+
+.card-content{
+
+padding:20px;
+}
+
+.card-content h3{
+
+color:#00BFFF;
+
+margin-bottom:10px;
+}
+
+.card-content p{
+
+line-height:1.6;
+}
+
+/* Routes */
+
+.routes{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:20px;
+
+padding:30px;
+}
+
+.route{
+
+padding:18px 30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border-radius:15px;
+}
+
+/* Footer */
+
+footer{
+
+text-align:center;
+
+padding:25px;
+
+background:rgba(0,0,0,.4);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">🚌 SwiftBus</div>
+
+<ul>
+
+<li>Home</li>
+<li>Book Ticket</li>
+<li>Routes</li>
+<li>My Booking</li>
+<li>Contact</li>
+
+</ul>
+
+<button class="btn">Login</button>
+
+</nav>
+
+<section class="hero">
+
+<h1>Travel Smarter With SwiftBus</h1>
+
+<p>
+
+Book bus tickets instantly and travel comfortably
+across cities with premium services.
+
+</p>
+
+<div class="search-box">
+
+<input type="text"
+placeholder="From">
+
+<input type="text"
+placeholder="To">
+
+<input type="date">
+
+<select>
+
+<option>Bus Type</option>
+
+<option>Volvo</option>
+<option>Sleeper</option>
+<option>AC Coach</option>
+<option>Luxury Bus</option>
+
+</select>
+
+<button class="btn">
+Search Buses
+</button>
+
+</div>
+
+</section>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2>500+</h2>
+<p>Buses</p>
+</div>
+
+<div class="stat-card">
+<h2>100+</h2>
+<p>Routes</p>
+</div>
+
+<div class="stat-card">
+<h2>50K+</h2>
+<p>Happy Travelers</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Customer Support</p>
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Bus Categories
+
+</h2>
+
+<div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=900">
+
+<div class="card-content">
+
+<h3>🚌 Volvo Bus</h3>
+
+<p>
+
+Premium comfort with reclining seats
+and air conditioning.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=900">
+
+<div class="card-content">
+
+<h3>💺 Sleeper Coach</h3>
+
+<p>
+
+Comfortable overnight journeys with
+sleeping berths.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?w=900">
+
+<div class="card-content">
+
+<h3>⚡ AC Luxury Bus</h3>
+
+<p>
+
+Luxury interiors and premium travel
+experience.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Popular Routes
+
+</h2>
+
+<div class="routes">
+
+<div class="route">📍 Chennai → Bangalore</div>
+
+<div class="route">📍 Chennai → Coimbatore</div>
+
+<div class="route">📍 Chennai → Madurai</div>
+
+<div class="route">📍 Chennai → Hyderabad</div>
+
+<div class="route">📍 Chennai → Kochi</div>
+
+</div>
+
+<footer>
+
+🚌 SwiftBus Online Ticket Booking System © 2026
+
+</footer>
+
+</body>
+
+</html>
