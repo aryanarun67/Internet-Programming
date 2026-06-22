@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GlowStudio - Beauty Parlour Booking</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+
+url("https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=1800");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+}
+
+/* Navbar */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+}
+
+.logo{
+
+font-size:34px;
+font-weight:bold;
+
+color:#FFD1DC;
+}
+
+nav ul{
+
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+}
+
+nav ul li:hover{
+
+color:#FFD1DC;
+}
+
+.btn{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+45deg,
+#FFB6C1,
+#FFD1DC
+);
+}
+
+/* Hero */
+
+.hero{
+
+height:90vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+}
+
+.hero h1{
+
+font-size:80px;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#FFD1DC,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:22px;
+
+max-width:850px;
+
+color:#ffe6ee;
+}
+
+/* Appointment Form */
+
+.booking-box{
+
+margin-top:35px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+padding:25px;
+
+border-radius:20px;
+}
+
+.booking-box input,
+.booking-box select{
+
+padding:12px;
+
+margin:10px;
+
+border:none;
+
+border-radius:10px;
+
+width:200px;
+}
+
+/* Stats */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+padding:50px;
+}
+
+.stat-card{
+
+width:220px;
+
+padding:25px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+}
+
+.stat-card h2{
+
+color:#FFD1DC;
+}
+
+/* Section Title */
+
+.section-title{
+
+text-align:center;
+
+font-size:40px;
+
+color:#FFD1DC;
+
+margin:50px 0;
+}
+
+/* Service Cards */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px 40px 60px;
+}
+
+.card{
+
+width:300px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+overflow:hidden;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(255,182,193,.3);
+}
+
+.card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+}
+
+.card-content{
+
+padding:20px;
+}
+
+.card-content h3{
+
+color:#FFD1DC;
+
+margin-bottom:10px;
+}
+
+/* Reviews */
+
+.reviews{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+padding:30px;
+}
+
+.review{
+
+width:300px;
+
+padding:20px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border-radius:15px;
+}
+
+/* Footer */
+
+footer{
+
+text-align:center;
+
+padding:25px;
+
+background:rgba(0,0,0,.4);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">💄 GlowStudio</div>
+
+<ul>
+
+<li>Home</li>
+<li>Services</li>
+<li>Stylists</li>
+<li>Appointments</li>
+<li>Contact</li>
+
+</ul>
+
+<button class="btn">Login</button>
+
+</nav>
+
+<section class="hero">
+
+<h1>Beauty Begins Here</h1>
+
+<p>
+
+Book salon appointments instantly and enjoy
+premium beauty and wellness services.
+
+</p>
+
+<div class="booking-box">
+
+<input type="text"
+placeholder="Your Name">
+
+<select>
+
+<option>Select Service</option>
+
+<option>Hair Styling</option>
+<option>Facial</option>
+<option>Makeup</option>
+<option>Spa Therapy</option>
+
+</select>
+
+<input type="date">
+
+<input type="time">
+
+<button class="btn">
+
+Book Appointment
+
+</button>
+
+</div>
+
+</section>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2>50+</h2>
+<p>Beauty Experts</p>
+</div>
+
+<div class="stat-card">
+<h2>20K+</h2>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat-card">
+<h2>100+</h2>
+<p>Services</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Online Booking</p>
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Our Premium Services
+
+</h2>
+
+<div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=900">
+
+<div class="card-content">
+
+<h3>💇 Hair Styling</h3>
+
+<p>
+Professional haircuts, styling and treatments.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900">
+
+<div class="card-content">
+
+<h3>✨ Facial Care</h3>
+
+<p>
+Luxury facials for glowing and healthy skin.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=900">
+
+<div class="card-content">
+
+<h3>💄 Bridal Makeup</h3>
+
+<p>
+Elegant makeup services for special occasions.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Customer Reviews
+
+</h2>
+
+<div class="reviews">
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+Amazing service and very professional staff.
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+The facial treatment was excellent. Highly recommended!
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br><br>
+Loved the ambience and beauty experts.
+</div>
+
+</div>
+
+<footer>
+
+💄 GlowStudio Beauty Parlour Appointment Booking System © 2026
+
+</footer>
+
+</body>
+
+</html>
