@@ -1,0 +1,91 @@
+student.xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students>
+
+    <student id="101">
+
+        <name>Aryan Arun</name>
+
+        <department>CSE</department>
+
+        <year>3</year>
+
+        <email>aryan@gmail.com</email>
+
+        <phone>9876543210</phone>
+
+    </student>
+
+    <student id="102">
+
+        <name>Rahul Kumar</name>
+
+        <department>IT</department>
+
+        <year>2</year>
+
+        <email>rahul@gmail.com</email>
+
+        <phone>9876543211</phone>
+
+    </student>
+
+    <student id="103">
+
+        <name>Priya Sharma</name>
+
+        <department>ECE</department>
+
+        <year>4</year>
+
+        <email>priya@gmail.com</email>
+
+        <phone>9876543212</phone>
+
+library.xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<library>
+
+    <book id="B101">
+
+        <title>Python Programming</title>
+
+        <author>John Smith</author>
+
+        <publisher>Pearson</publisher>
+
+        <price>550</price>
+
+    </book>
+
+    <book id="B102">
+
+        <title>Web Technologies</title>
+
+        <author>David Miller</author>
+
+        <publisher>McGraw Hill</publisher>
+
+        <price>650</price>
+
+    </book>
+
+    <book id="B103">
+
+        <title>Data Structures</title>
+
+        <author>Robert Brown</author>
+
+        <publisher>Oxford</publisher>
+
+        <price>700</price>
+
+    </book>
+
+</library>
+
+    </student>
+
+</students>
