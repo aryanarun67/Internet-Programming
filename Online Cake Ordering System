@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CakeHeaven - Online Cake Ordering System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+
+url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1800");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+}
+
+.logo{
+
+font-size:34px;
+font-weight:bold;
+
+color:#FFB6C1;
+}
+
+nav ul{
+
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+}
+
+nav ul li:hover{
+
+color:#FFB6C1;
+}
+
+.btn{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+45deg,
+#FF69B4,
+#FFC0CB
+);
+}
+
+/* HERO */
+
+.hero{
+
+height:90vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+}
+
+.hero h1{
+
+font-size:80px;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#FFC0CB,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:22px;
+
+max-width:850px;
+
+color:#ffe4e1;
+}
+
+/* SEARCH BOX */
+
+.search-box{
+
+margin-top:35px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+padding:25px;
+
+border-radius:20px;
+}
+
+.search-box input,
+.search-box select{
+
+padding:12px;
+
+margin:10px;
+
+border:none;
+
+border-radius:10px;
+
+width:180px;
+}
+
+/* STATS */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+padding:50px;
+}
+
+.stat-card{
+
+width:220px;
+
+padding:25px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+}
+
+.stat-card h2{
+
+color:#FFC0CB;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+text-align:center;
+
+font-size:40px;
+
+color:#FFC0CB;
+
+margin:50px 0;
+}
+
+/* CAKE CARDS */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px 40px 60px;
+}
+
+.card{
+
+width:300px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+overflow:hidden;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(255,192,203,.3);
+}
+
+.card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+}
+
+.card-content{
+
+padding:20px;
+}
+
+.card-content h3{
+
+color:#FFC0CB;
+
+margin-bottom:10px;
+}
+
+.card-content p{
+
+line-height:1.6;
+}
+
+/* ORDER FORM */
+
+.order-box{
+
+width:700px;
+
+margin:40px auto;
+
+padding:30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+}
+
+.order-box input,
+.order-box select,
+.order-box textarea{
+
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+border:none;
+
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+
+padding:25px;
+
+background:rgba(0,0,0,.4);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">🎂 CakeHeaven</div>
+
+<ul>
+
+<li>Home</li>
+<li>Cakes</li>
+<li>Categories</li>
+<li>Orders</li>
+<li>Contact</li>
+
+</ul>
+
+<button class="btn">Login</button>
+
+</nav>
+
+<section class="hero">
+
+<h1>Sweet Moments Delivered</h1>
+
+<p>
+
+Order delicious cakes for birthdays, weddings,
+anniversaries and every special celebration.
+
+</p>
+
+<div class="search-box">
+
+<input type="text"
+placeholder="Search Cake">
+
+<select>
+
+<option>Category</option>
+
+<option>Birthday Cake</option>
+<option>Wedding Cake</option>
+<option>Chocolate Cake</option>
+<option>Designer Cake</option>
+
+</select>
+
+<select>
+
+<option>Price Range</option>
+
+<option>₹500 - ₹1000</option>
+<option>₹1000 - ₹2000</option>
+<option>₹2000+</option>
+
+</select>
+
+<button class="btn">
+
+Search
+
+</button>
+
+</div>
+
+</section>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2>500+</h2>
+<p>Cake Varieties</p>
+</div>
+
+<div class="stat-card">
+<h2>10K+</h2>
+<p>Happy Customers</p>
+</div>
+
+<div class="stat-card">
+<h2>100+</h2>
+<p>Cities Served</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Online Orders</p>
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Featured Cakes
+
+</h2>
+
+<div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=900">
+
+<div class="card-content">
+
+<h3>🍫 Chocolate Cake</h3>
+
+<p>
+
+Rich chocolate layers with creamy frosting.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=900">
+
+<div class="card-content">
+
+<h3>🎂 Birthday Cake</h3>
+
+<p>
+
+Customized birthday cakes with special designs.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=900">
+
+<div class="card-content">
+
+<h3>💍 Wedding Cake</h3>
+
+<p>
+
+Elegant multi-layer cakes for weddings.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Place Your Order
+
+</h2>
+
+<div class="order-box">
+
+<input type="text"
+placeholder="Customer Name">
+
+<input type="email"
+placeholder="Email Address">
+
+<select>
+
+<option>Select Cake</option>
+
+<option>Chocolate Cake</option>
+<option>Birthday Cake</option>
+<option>Wedding Cake</option>
+
+</select>
+
+<input type="date">
+
+<textarea rows="4"
+placeholder="Custom Message on Cake">
+</textarea>
+
+<input type="text"
+placeholder="Delivery Address">
+
+<button class="btn"
+style="width:100%;">
+
+Place Order
+
+</button>
+
+</div>
+
+<footer>
+
+🎂 CakeHeaven Online Cake Ordering System © 2026
+
+</footer>
+
+</body>
+
+</html>
