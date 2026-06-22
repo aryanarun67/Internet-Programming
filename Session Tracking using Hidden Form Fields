@@ -1,0 +1,230 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8"%>
+
+<%
+String step = request.getParameter("step");
+%>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Session Tracking Using Hidden Form Fields</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.65)
+),
+
+url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1800");
+
+background-size:cover;
+background-position:center;
+}
+
+.box{
+
+width:550px;
+
+padding:30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+
+color:white;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+
+color:#00E5FF;
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+border:none;
+
+border-radius:10px;
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+background:#00E5FF;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+.result{
+
+font-size:20px;
+
+line-height:2;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<%
+
+if(step == null)
+{
+
+%>
+
+<h1>Student Details</h1>
+
+<form method="post">
+
+<input type="hidden" name="step" value="2">
+
+<input type="text"
+name="studentName"
+placeholder="Enter Student Name"
+required>
+
+<input type="text"
+name="department"
+placeholder="Enter Department"
+required>
+
+<button type="submit">
+
+Next
+
+</button>
+
+</form>
+
+<%
+
+}
+
+else if(step.equals("2"))
+{
+
+String name = request.getParameter("studentName");
+String dept = request.getParameter("department");
+
+%>
+
+<h1>Course Selection</h1>
+
+<form method="post">
+
+<input type="hidden" name="step" value="3">
+
+<input type="hidden"
+name="studentName"
+value="<%= name %>">
+
+<input type="hidden"
+name="department"
+value="<%= dept %>">
+
+<input type="text"
+name="course"
+placeholder="Enter Course Name"
+required>
+
+<button type="submit">
+
+Submit
+
+</button>
+
+</form>
+
+<%
+
+}
+
+else if(step.equals("3"))
+{
+
+String name = request.getParameter("studentName");
+String dept = request.getParameter("department");
+String course = request.getParameter("course");
+
+%>
+
+<h1>Session Tracking Successful</h1>
+
+<div class="result">
+
+<b>Name:</b>
+<%= name %>
+
+<br>
+
+<b>Department:</b>
+<%= dept %>
+
+<br>
+
+<b>Course:</b>
+<%= course %>
+
+<br><br>
+
+The user information was passed from one page
+to another using Hidden Form Fields.
+
+</div>
+
+<%
+
+}
+
+%>
+
+</div>
+
+</body>
+
+</html>
