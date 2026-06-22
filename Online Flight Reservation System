@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SkyWings - Flight Reservation System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+
+url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1800");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+}
+
+.logo{
+
+font-size:34px;
+font-weight:bold;
+
+color:#00BFFF;
+}
+
+nav ul{
+
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+}
+
+nav ul li:hover{
+
+color:#00BFFF;
+}
+
+.btn{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+45deg,
+#00BFFF,
+#87CEFA
+);
+}
+
+/* HERO */
+
+.hero{
+
+height:90vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+}
+
+.hero h1{
+
+font-size:80px;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#00BFFF,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:22px;
+
+max-width:850px;
+
+color:#dff6ff;
+}
+
+/* SEARCH FORM */
+
+.search-box{
+
+margin-top:35px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+padding:25px;
+
+border-radius:20px;
+}
+
+.search-box input,
+.search-box select{
+
+padding:12px;
+
+margin:10px;
+
+border:none;
+
+border-radius:10px;
+
+width:180px;
+}
+
+/* STATS */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+padding:50px;
+}
+
+.stat-card{
+
+width:220px;
+
+padding:25px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+}
+
+.stat-card h2{
+
+color:#00BFFF;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+text-align:center;
+
+font-size:40px;
+
+color:#00BFFF;
+
+margin:50px 0;
+}
+
+/* FLIGHT CARDS */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px 40px 60px;
+}
+
+.card{
+
+width:300px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+overflow:hidden;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(0,191,255,.3);
+}
+
+.card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+}
+
+.card-content{
+
+padding:20px;
+}
+
+.card-content h3{
+
+color:#00BFFF;
+
+margin-bottom:10px;
+}
+
+.card-content p{
+
+line-height:1.6;
+}
+
+/* BOOKING STATUS */
+
+.status-box{
+
+width:600px;
+
+margin:40px auto;
+
+padding:30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+
+text-align:center;
+}
+
+.status-box input{
+
+width:80%;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+
+padding:25px;
+
+background:rgba(0,0,0,.4);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">✈️ SkyWings</div>
+
+<ul>
+
+<li>Home</li>
+<li>Flights</li>
+<li>Bookings</li>
+<li>Ticket Status</li>
+<li>Contact</li>
+
+</ul>
+
+<button class="btn">Login</button>
+
+</nav>
+
+<section class="hero">
+
+<h1>Fly Beyond Boundaries</h1>
+
+<p>
+
+Search, Book and Manage Flights with ease.
+Experience luxury travel with SkyWings Airlines.
+
+</p>
+
+<div class="search-box">
+
+<input type="text"
+placeholder="From">
+
+<input type="text"
+placeholder="To">
+
+<input type="date">
+
+<select>
+
+<option>Class</option>
+
+<option>Economy</option>
+<option>Business</option>
+<option>First Class</option>
+
+</select>
+
+<button class="btn">
+
+Search Flights
+
+</button>
+
+</div>
+
+</section>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2>300+</h2>
+<p>Daily Flights</p>
+</div>
+
+<div class="stat-card">
+<h2>120+</h2>
+<p>Destinations</p>
+</div>
+
+<div class="stat-card">
+<h2>1M+</h2>
+<p>Passengers</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Support</p>
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Flight Classes
+
+</h2>
+
+<div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900">
+
+<div class="card-content">
+
+<h3>✈️ Economy Class</h3>
+
+<p>
+
+Affordable travel with excellent comfort
+and onboard services.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1529074963764-98f45c47344b?w=900">
+
+<div class="card-content">
+
+<h3>💼 Business Class</h3>
+
+<p>
+
+Premium seating, lounge access and
+priority services.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1540339832862-474599807836?w=900">
+
+<div class="card-content">
+
+<h3>👑 First Class</h3>
+
+<p>
+
+Luxury suites and world-class travel
+experience.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+View Booking Status
+
+</h2>
+
+<div class="status-box">
+
+<input type="text"
+placeholder="Enter Ticket Number">
+
+<br>
+
+<button class="btn">
+
+Check Status
+
+</button>
+
+</div>
+
+<footer>
+
+✈️ SkyWings Flight Reservation System © 2026
+
+</footer>
+
+</body>
+
+</html>
