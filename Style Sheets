@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Style Sheet Example</title>
+
+<style>
+
+body{
+
+font-family:Segoe UI;
+
+background:
+linear-gradient(
+135deg,
+#1e3c72,
+#2a5298
+);
+
+color:white;
+
+text-align:center;
+
+padding:50px;
+}
+
+.container{
+
+width:600px;
+
+margin:auto;
+
+padding:30px;
+
+background:
+rgba(255,255,255,.15);
+
+border-radius:15px;
+
+backdrop-filter:blur(10px);
+}
+
+button{
+
+padding:12px 25px;
+
+background:#00E5FF;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
+}
+
+button:hover{
+
+background:white;
+
+color:#000;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>CSS Style Sheet Demo</h1>
+
+<p>
+This webpage demonstrates the use of
+Internal Cascading Style Sheets (CSS).
+</p>
+
+<button>
+Learn More
+</button>
+
+</div>
+
+</body>
+</html>
