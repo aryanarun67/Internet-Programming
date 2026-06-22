@@ -1,0 +1,220 @@
+INDEX.HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Student Registration Form</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.65)
+),
+
+url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1800");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+height:100vh;
+}
+
+.form-box{
+
+width:450px;
+
+padding:30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+
+color:white;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+
+color:#00E5FF;
+}
+
+input,
+select{
+
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+border:none;
+
+border-radius:10px;
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+background:#00E5FF;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h1>Student Registration</h1>
+
+<form action="store.php" method="POST">
+
+<input type="text"
+name="name"
+placeholder="Enter Name"
+required>
+
+<input type="email"
+name="email"
+placeholder="Enter Email"
+required>
+
+<input type="text"
+name="department"
+placeholder="Department"
+required>
+
+<select name="year">
+
+<option>Choose Year</option>
+
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+
+</select>
+
+<button type="submit">
+
+Submit
+
+</button>
+
+</form>
+</div>
+
+</body>
+</html>
+
+Store.php
+
+<?php
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$department = $_POST['department'];
+$year = $_POST['year'];
+
+?>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Stored Data</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f4f4f4;
+
+padding:50px;
+}
+
+.box{
+
+width:500px;
+
+margin:auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+box-shadow:0 0 15px rgba(0,0,0,.2);
+}
+
+h1{
+
+color:#007BFF;
+}
+
+p{
+
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Student Details Stored Successfully</h1>
+
+<p><b>Name:</b> <?php echo $name; ?></p>
+
+<p><b>Email:</b> <?php echo $email; ?></p>
+
+<p><b>Department:</b> <?php echo $department; ?></p>
+
+<p><b>Year:</b> <?php echo $year; ?></p>
+
+</div>
+
+</body>
+
+</html>
