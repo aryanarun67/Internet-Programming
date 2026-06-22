@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OpinionHub - People's Opinion Platform</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.65)
+),
+
+url("https://images.unsplash.com/photo-1552664730-d307ca884978?w=1800");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(12px);
+
+position:sticky;
+top:0;
+}
+
+.logo{
+
+font-size:34px;
+font-weight:bold;
+
+color:#00E5FF;
+}
+
+nav ul{
+
+display:flex;
+gap:30px;
+
+list-style:none;
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+}
+
+nav ul li:hover{
+
+color:#00E5FF;
+}
+
+.btn{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+45deg,
+#00E5FF,
+#4FC3F7
+);
+
+color:black;
+}
+
+/* HERO */
+
+.hero{
+
+height:90vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+}
+
+.hero h1{
+
+font-size:80px;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#00E5FF,
+#ffffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:22px;
+
+max-width:900px;
+
+color:#dffbff;
+}
+
+/* POLL BOX */
+
+.poll-box{
+
+margin-top:35px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+padding:30px;
+
+border-radius:20px;
+
+width:650px;
+}
+
+.poll-box h2{
+
+margin-bottom:20px;
+
+color:#00E5FF;
+}
+
+.poll-box label{
+
+display:block;
+
+margin:12px 0;
+}
+
+.poll-box textarea{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+margin-top:15px;
+}
+
+/* STATS */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+padding:50px;
+}
+
+.stat-card{
+
+width:220px;
+
+padding:25px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+}
+
+.stat-card h2{
+
+color:#00E5FF;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+text-align:center;
+
+font-size:40px;
+
+color:#00E5FF;
+
+margin:50px 0;
+}
+
+/* OPINION CARDS */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px 40px 60px;
+}
+
+.card{
+
+width:320px;
+
+padding:25px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(0,229,255,.3);
+}
+
+.card h3{
+
+color:#00E5FF;
+
+margin-bottom:10px;
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+
+padding:25px;
+
+background:rgba(0,0,0,.4);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">📊 OpinionHub</div>
+
+<ul>
+
+<li>Home</li>
+<li>Polls</li>
+<li>Opinions</li>
+<li>Results</li>
+<li>Contact</li>
+
+</ul>
+
+<button class="btn">Login</button>
+
+</nav>
+
+<section class="hero">
+
+<h1>Your Opinion Matters</h1>
+
+<p>
+
+Share your views, participate in surveys,
+and discover what people think about important topics.
+
+</p>
+
+<div class="poll-box">
+
+<h2>Current Survey</h2>
+
+<p>
+What is the most important factor in choosing a smartphone?
+</p>
+
+<label>
+<input type="radio" name="poll">
+Price
+</label>
+
+<label>
+<input type="radio" name="poll">
+Camera Quality
+</label>
+
+<label>
+<input type="radio" name="poll">
+Battery Life
+</label>
+
+<label>
+<input type="radio" name="poll">
+Performance
+</label>
+
+<textarea rows="4"
+placeholder="Share your opinion...">
+</textarea>
+
+<br><br>
+
+<button class="btn">
+
+Submit Opinion
+
+</button>
+
+</div>
+
+</section>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2>50K+</h2>
+<p>Opinions Collected</p>
+</div>
+
+<div class="stat-card">
+<h2>1000+</h2>
+<p>Active Surveys</p>
+</div>
+
+<div class="stat-card">
+<h2>25K+</h2>
+<p>Registered Users</p>
+</div>
+
+<div class="stat-card">
+<h2>98%</h2>
+<p>Participation Rate</p>
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Popular Opinion Categories
+
+</h2>
+
+<div class="container">
+
+<div class="card">
+
+<h3>📱 Technology</h3>
+
+<p>
+Share opinions on gadgets, AI, software and emerging technologies.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🎓 Education</h3>
+
+<p>
+Discuss learning methods, universities and online education.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>🌍 Environment</h3>
+
+<p>
+Express views on sustainability and environmental issues.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚽ Sports</h3>
+
+<p>
+Vote and share opinions on teams, tournaments and players.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+📊 OpinionHub - Web Service for Finding People's Opinion © 2026
+
+</footer>
+
+</body>
+
+</html>
