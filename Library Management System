@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Library Management System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.75)
+),
+
+url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1800");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(0,0,0,.3);
+
+backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+}
+
+.logo{
+
+font-size:32px;
+font-weight:bold;
+
+color:#FFD700;
+}
+
+nav ul{
+
+display:flex;
+gap:30px;
+
+list-style:none;
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+}
+
+nav ul li:hover{
+
+color:#FFD700;
+}
+
+.btn{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+45deg,
+#FFD700,
+#F5DEB3
+);
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+
+height:90vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+}
+
+.hero h1{
+
+font-size:75px;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#FFD700,
+#fff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:22px;
+
+max-width:800px;
+
+color:#F5E6C8;
+}
+
+/* SEARCH */
+
+.search-box{
+
+margin-top:35px;
+}
+
+.search-box input{
+
+width:450px;
+
+padding:15px;
+
+border:none;
+
+border-radius:30px;
+}
+
+.search-box button{
+
+padding:15px 25px;
+
+border:none;
+
+border-radius:30px;
+
+background:#FFD700;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+/* STATS */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:40px;
+}
+
+.stat-card{
+
+width:220px;
+
+padding:25px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+}
+
+.stat-card h2{
+
+color:#FFD700;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+text-align:center;
+
+font-size:40px;
+
+color:#FFD700;
+
+margin:50px 0;
+}
+
+/* CARDS */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px 40px 60px;
+}
+
+.card{
+
+width:300px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+padding:25px;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(255,215,0,.3);
+}
+
+.card h3{
+
+color:#FFD700;
+
+margin-bottom:15px;
+}
+
+.card ul{
+
+line-height:1.8;
+}
+
+/* LOGIN SECTION */
+
+.form-section{
+
+display:flex;
+
+justify-content:center;
+
+padding:50px;
+}
+
+.form-box{
+
+width:600px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+padding:30px;
+
+border-radius:20px;
+}
+
+.form-box h2{
+
+text-align:center;
+
+margin-bottom:20px;
+
+color:#FFD700;
+}
+
+input, select{
+
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+border:none;
+
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+
+padding:25px;
+
+background:rgba(0,0,0,.4);
+
+margin-top:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">📚 Smart Library</div>
+
+<ul>
+
+<li>Home</li>
+<li>Books</li>
+<li>Materials</li>
+<li>Students</li>
+<li>Contact</li>
+
+</ul>
+
+<button class="btn">Login</button>
+
+</nav>
+
+<section class="hero">
+
+<h1>Smart Library Management</h1>
+
+<p>
+
+Search Books, Download Materials, Track Borrow History
+and Manage Library Activities Easily.
+
+</p>
+
+<div class="search-box">
+
+<input type="text"
+placeholder="Search Books, Authors, Subjects...">
+
+<button>Search</button>
+
+</div>
+
+</section>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2>15,000+</h2>
+<p>Books Available</p>
+</div>
+
+<div class="stat-card">
+<h2>5,000+</h2>
+<p>Students</p>
+</div>
+
+<div class="stat-card">
+<h2>800+</h2>
+<p>Materials</p>
+</div>
+
+<div class="stat-card">
+<h2>98%</h2>
+<p>Availability</p>
+</div>
+
+</div>
+
+<h2 class="section-title">
+Library Features
+</h2>
+
+<div class="container">
+
+<div class="card">
+
+<h3>👨‍🎓 Student Portal</h3>
+
+<ul>
+<li>Register/Login</li>
+<li>Search Books</li>
+<li>Borrow History</li>
+<li>Check Fine</li>
+<li>Download Materials</li>
+<li>My Profile</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>👨‍💼 Librarian Dashboard</h3>
+
+<ul>
+<li>Add Books</li>
+<li>Update Books</li>
+<li>Delete Books</li>
+<li>Issue Books</li>
+<li>Return Status</li>
+<li>Fine Management</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>📄 Study Materials</h3>
+
+<ul>
+<li>Semester Wise Notes</li>
+<li>Department Materials</li>
+<li>PDF Downloads</li>
+<li>Latest Uploads</li>
+<li>Subject Resources</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>📚 Digital Catalog</h3>
+
+<ul>
+<li>Book Search</li>
+<li>Author Search</li>
+<li>Category Search</li>
+<li>Availability Status</li>
+<li>Issue Tracking</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="form-section">
+
+<div class="form-box">
+
+<h2>Student Login</h2>
+
+<form>
+
+<input type="text"
+placeholder="Student ID">
+
+<input type="password"
+placeholder="Password">
+
+<select>
+
+<option>Select Department</option>
+
+<option>CSE</option>
+<option>IT</option>
+<option>ECE</option>
+<option>EEE</option>
+
+</select>
+
+<button class="btn"
+style="width:100%; margin-top:10px;">
+
+Login
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+📚 Smart Library Management System © 2026
+
+</footer>
+
+</body>
+
+</html>
