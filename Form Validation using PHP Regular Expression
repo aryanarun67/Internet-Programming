@@ -1,0 +1,252 @@
+index.html
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>PHP Form Validation</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.65)
+),
+
+url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1800");
+
+background-size:cover;
+background-position:center;
+}
+
+.form-box{
+
+width:450px;
+
+padding:30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+
+color:white;
+}
+
+h1{
+
+text-align:center;
+
+margin-bottom:20px;
+
+color:#00E5FF;
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+border:none;
+
+border-radius:10px;
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+background:#00E5FF;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h1>Student Registration</h1>
+
+<form action="validate.php" method="POST">
+
+<input type="text"
+name="name"
+placeholder="Enter Name">
+
+<input type="email"
+name="email"
+placeholder="Enter Email">
+
+<input type="text"
+name="mobile"
+placeholder="Enter Mobile Number">
+
+<input type="password"
+name="password"
+placeholder="Enter Password">
+
+<button type="submit">
+
+Validate
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
+
+validate.php
+
+<?php
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$mobile = $_POST['mobile'];
+$password = $_POST['password'];
+
+$namePattern = "/^[A-Za-z ]+$/";
+$emailPattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+$mobilePattern = "/^[0-9]{10}$/";
+$passwordPattern = "/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}$/";
+
+?>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Validation Result</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+background:#f4f4f4;
+
+padding:50px;
+}
+
+.box{
+
+width:600px;
+
+margin:auto;
+
+padding:30px;
+
+background:white;
+
+border-radius:15px;
+
+box-shadow:0 0 15px rgba(0,0,0,.2);
+}
+
+h1{
+
+color:#007BFF;
+}
+
+.valid{
+color:green;
+font-weight:bold;
+}
+
+.invalid{
+color:red;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Validation Results</h1>
+
+<?php
+
+if(preg_match($namePattern,$name))
+echo "<p class='valid'>✓ Valid Name</p>";
+else
+echo "<p class='invalid'>✗ Invalid Name</p>";
+
+if(preg_match($emailPattern,$email))
+echo "<p class='valid'>✓ Valid Email</p>";
+else
+echo "<p class='invalid'>✗ Invalid Email</p>";
+
+if(preg_match($mobilePattern,$mobile))
+echo "<p class='valid'>✓ Valid Mobile Number</p>";
+else
+echo "<p class='invalid'>✗ Invalid Mobile Number</p>";
+
+if(preg_match($passwordPattern,$password))
+echo "<p class='valid'>✓ Strong Password</p>";
+else
+echo "<p class='invalid'>✗ Password must contain:</p>
+<ul>
+<li>At least 8 characters</li>
+<li>One uppercase letter</li>
+<li>One lowercase letter</li>
+<li>One number</li>
+</ul>";
+
+?>
+
+<br>
+
+<h2>User Details</h2>
+
+<p><b>Name:</b> <?php echo $name; ?></p>
+<p><b>Email:</b> <?php echo $email; ?></p>
+<p><b>Mobile:</b> <?php echo $mobile; ?></p>
+
+</div>
+
+</body>
+
+</html>
