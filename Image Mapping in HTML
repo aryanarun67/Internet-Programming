@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Mapping Example</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+text-align:center;
+padding:30px;
+}
+
+h1{
+color:#007BFF;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Image Mapping in HTML</h1>
+
+<img src="https://via.placeholder.com/800x400"
+     usemap="#imagemap"
+     alt="Image Map">
+
+<map name="imagemap">
+
+<area shape="rect"
+coords="50,50,250,200"
+href="https://www.google.com"
+target="_blank"
+alt="Google">
+
+<area shape="circle"
+coords="450,150,80"
+href="https://www.youtube.com"
+target="_blank"
+alt="YouTube">
+
+<area shape="poly"
+coords="600,50,750,100,700,250,550,200"
+href="https://www.wikipedia.org"
+target="_blank"
+alt="Wikipedia">
+
+</map>
+
+</body>
+</html>
