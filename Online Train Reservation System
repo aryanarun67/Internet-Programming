@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RailConnect - Online Train Reservation</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.65)
+),
+
+url("https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1800");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+}
+
+/* NAVBAR */
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(0,0,0,.25);
+
+backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+}
+
+.logo{
+
+font-size:34px;
+font-weight:bold;
+
+color:#4FC3F7;
+}
+
+nav ul{
+
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav ul li{
+
+cursor:pointer;
+transition:.3s;
+}
+
+nav ul li:hover{
+
+color:#4FC3F7;
+}
+
+.btn{
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:30px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+45deg,
+#4FC3F7,
+#B3E5FC
+);
+}
+
+/* HERO */
+
+.hero{
+
+height:90vh;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+}
+
+.hero h1{
+
+font-size:78px;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+#fff,
+#4FC3F7,
+#fff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+
+font-size:22px;
+
+max-width:850px;
+
+color:#dff4ff;
+}
+
+/* SEARCH FORM */
+
+.search-box{
+
+margin-top:35px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+padding:25px;
+
+border-radius:20px;
+}
+
+.search-box input,
+.search-box select{
+
+padding:12px;
+
+margin:10px;
+
+border:none;
+
+border-radius:10px;
+
+width:180px;
+}
+
+/* STATS */
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:25px;
+
+padding:50px;
+}
+
+.stat-card{
+
+width:220px;
+
+padding:25px;
+
+text-align:center;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(10px);
+
+border-radius:20px;
+}
+
+.stat-card h2{
+
+color:#4FC3F7;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+text-align:center;
+
+font-size:40px;
+
+color:#4FC3F7;
+
+margin:50px 0;
+}
+
+/* TRAIN CARDS */
+
+.container{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:20px 40px 60px;
+}
+
+.card{
+
+width:300px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+
+overflow:hidden;
+
+transition:.4s;
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:
+0 15px 35px rgba(79,195,247,.3);
+}
+
+.card img{
+
+width:100%;
+height:220px;
+
+object-fit:cover;
+}
+
+.card-content{
+
+padding:20px;
+}
+
+.card-content h3{
+
+color:#4FC3F7;
+
+margin-bottom:10px;
+}
+
+.card-content p{
+
+line-height:1.6;
+}
+
+/* PNR CHECKER */
+
+.pnr-box{
+
+width:600px;
+
+margin:40px auto;
+
+padding:30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border-radius:20px;
+
+text-align:center;
+}
+
+.pnr-box input{
+
+width:80%;
+
+padding:12px;
+
+border:none;
+
+border-radius:10px;
+
+margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+
+padding:25px;
+
+background:rgba(0,0,0,.4);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">🚆 RailConnect</div>
+
+<ul>
+
+<li>Home</li>
+<li>Book Ticket</li>
+<li>Train Schedule</li>
+<li>PNR Status</li>
+<li>My Booking</li>
+
+</ul>
+
+<button class="btn">Login</button>
+
+</nav>
+
+<section class="hero">
+
+<h1>Reserve Your Train Journey</h1>
+
+<p>
+
+Book train tickets, check seat availability,
+track PNR status and enjoy a smooth travel experience.
+
+</p>
+
+<div class="search-box">
+
+<input type="text"
+placeholder="Source Station">
+
+<input type="text"
+placeholder="Destination Station">
+
+<input type="date">
+
+<select>
+
+<option>Class</option>
+
+<option>Sleeper</option>
+<option>AC 3 Tier</option>
+<option>AC 2 Tier</option>
+<option>First Class</option>
+
+</select>
+
+<button class="btn">
+
+Search Trains
+
+</button>
+
+</div>
+
+</section>
+
+<div class="stats">
+
+<div class="stat-card">
+<h2>800+</h2>
+<p>Daily Trains</p>
+</div>
+
+<div class="stat-card">
+<h2>50K+</h2>
+<p>Passengers</p>
+</div>
+
+<div class="stat-card">
+<h2>250+</h2>
+<p>Stations</p>
+</div>
+
+<div class="stat-card">
+<h2>24/7</h2>
+<p>Service</p>
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Train Categories
+
+</h2>
+
+<div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900">
+
+<div class="card-content">
+
+<h3>🚄 Vande Bharat</h3>
+
+<p>
+
+India's premium semi-high-speed train
+with modern facilities.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=900">
+
+<div class="card-content">
+
+<h3>⚡ Superfast Express</h3>
+
+<p>
+
+Fast and comfortable long-distance
+travel services.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=900">
+
+<div class="card-content">
+
+<h3>🛏 Sleeper Class</h3>
+
+<p>
+
+Affordable overnight travel with
+comfortable sleeping berths.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+PNR Status Checker
+
+</h2>
+
+<div class="pnr-box">
+
+<input type="text"
+placeholder="Enter PNR Number">
+
+<br>
+
+<button class="btn">
+
+Check Status
+
+</button>
+
+</div>
+
+<footer>
+
+🚆 RailConnect Online Train Reservation System © 2026
+
+</footer>
+
+</body>
+
+</html>
