@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>JavaScript Validation</title>
+
+<style>
+
+body{
+
+font-family:Segoe UI;
+
+background:
+linear-gradient(
+135deg,
+#141E30,
+#243B55
+);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:100vh;
+}
+
+.form-box{
+
+width:400px;
+
+padding:30px;
+
+background:white;
+
+border-radius:15px;
+
+box-shadow:0 0 15px rgba(0,0,0,.3);
+}
+
+h2{
+
+text-align:center;
+
+color:#007BFF;
+}
+
+input{
+
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+border:1px solid #ccc;
+
+border-radius:8px;
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+background:#007BFF;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+}
+
+</style>
+
+<script>
+
+function validateForm()
+{
+
+var name =
+document.forms["myForm"]["name"].value;
+
+var email =
+document.forms["myForm"]["email"].value;
+
+if(name=="")
+{
+alert("Name cannot be empty");
+return false;
+}
+
+if(email=="")
+{
+alert("Email cannot be empty");
+return false;
+}
+
+if(email.indexOf("@")==-1)
+{
+alert("Invalid Email");
+return false;
+}
+
+alert("Form Submitted Successfully");
+
+return true;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h2>Registration Form</h2>
+
+<form name="myForm"
+onsubmit="return validateForm()">
+
+<input type="text"
+name="name"
+placeholder="Enter Name">
+
+<input type="text"
+name="email"
+placeholder="Enter Email">
+
+<button type="submit">
+
+Submit
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
